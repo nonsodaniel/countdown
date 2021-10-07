@@ -82,25 +82,29 @@ class Countdown extends React.Component {
       </div>
      <h1 className="name mb-2">CTO's Birthday</h1>
      <p className="mb-2">is on</p>
-     <p className="date mb-2">thu Dec 24 2020 00:00:00 GMT+0100 (West Africa Standard Time)</p>
+     <p className="date mb-2">{new Date().toGMTString()}</p>
      <ul className="list-wrap mb-2">
        <li>
-         <h2 className="count">183</h2>
-         <span className="date__desc">DAYS</span>
+         <h2 className="count">{this.addLeadingZeros(countDown.days)}</h2>
+         <span className="date__desc">{countDown.days === 1 ? 'Day' : 'Days'}</span>
        </li>
        <li>
-         <h2 className="count">05</h2>
+         <h2 className="count">{this.addLeadingZeros(countDown.hours)}</h2>
          <span className="date__desc">HOURS</span>
        </li>
        <li>
-         <h2 className="count">34</h2>
+         <h2 className="count">{this.addLeadingZeros(countDown.min)}</h2>
          <span className="date__desc">MINUTES</span>
        </li>
        <li>
-         <h2 className="count">30</h2>
+         <h2 className="count">
+           {this.addLeadingZeros(countDown.sec).slice(0, 3)}
+           </h2>
          <span className="date__desc">SECONDS</span>
        </li>
      </ul>
+     
+     <p className="mb-2 bottom__text">Click <em className="here">Here</em> to create your custom Countdown</p>
         </div>
       </div>
     );
@@ -108,3 +112,4 @@ class Countdown extends React.Component {
 }
 
 export default Countdown;
+
