@@ -1,0 +1,28 @@
+.ReactModalPortal{
+    .header{
+      margin-bottom: 1rem;
+      text-align: right;
+      .close-modal{
+        font-size: 20px;
+          font-size: 20px;
+          margin-bottom: 1rem;
+        }
+      h2, .far{
+        color: #5b5b5b;
+      }
+      .btn-wrap{
+        text-align: center;
+        margin-top: 2rem;
+      }
+    }
+    
+    }
+    .ReactModal__Content{
+      width: 30%;
+    }
+    
+    @media (max-width: 768px){
+      .ReactModal__Content{
+        width: 90%;
+      }
+    }

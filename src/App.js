@@ -1,4 +1,4 @@
-import './App.css';
+import "./assets/css/utils.css";
 import './style/Countdown.css';
 import Countdown from './components/Countdown';
 
