@@ -1,0 +1,51 @@
+.countdown-container{
+    height: 100vh;
+    background: url(../assets/img/background.jpg);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+}
+.countdown-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    margin: auto;
+    width: 60%;
+    border-radius: 20px;
+    opacity: .9;
+}
+.list-wrap{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    width: 30rem;
+}
+.list-wrap li{
+    padding: 1rem 3rem;
+}
+.image{
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    margin: 2rem 0;
+}
+.image img{
+    height: 100%;
+    width: 100%;
+}
+.name{
+    font-size: 50px;
+    font-weight: 900;
+}
+.count{
+    font-size: 70px;
+    font-weight: 900;
+    color: #f3c304    ;
+}
+.date__desc{
+    font-size: 20px;
+    font-weight: 400;
+}

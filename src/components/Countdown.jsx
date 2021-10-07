@@ -1,5 +1,6 @@
 import React from 'react';
-
+import './countdown.css'
+import img from '../assets/img/avatar.png'
 class Countdown extends React.Component {
   constructor(props) {
     super(props);
@@ -74,26 +75,33 @@ class Countdown extends React.Component {
     const countDown = this.state;
 
     return (
-      <div className="Countdown">
-        <span className="countdown-col">
-          <strong>{this.addLeadingZeros(countDown.days)}</strong>
-          <span>{countDown.days === 1 ? 'Day' : 'Days'}</span>
-        </span>
-
-        <span className="countdown-col">
-          <strong>{this.addLeadingZeros(countDown.hours)}</strong>
-          <span>Hours</span>
-        </span>
-
-        <span className="countdown-col">
-          <strong>{this.addLeadingZeros(countDown.min)}</strong>
-          <span>Min</span>
-        </span>
-
-        <span className="countdown-col">
-          <strong>{this.addLeadingZeros(countDown.sec)}</strong>
-          <span>Sec</span>
-        </span>
+      <div className="countdown-container">
+        <div className="countdown-wrap">
+      <div className="image">
+        <img src={img} alt="user's__Image"/>
+      </div>
+     <h1 className="name mb-2">CTO's Birthday</h1>
+     <p className="mb-2">is on</p>
+     <p className="date mb-2">thu Dec 24 2020 00:00:00 GMT+0100 (West Africa Standard Time)</p>
+     <ul className="list-wrap mb-2">
+       <li>
+         <h2 className="count">183</h2>
+         <span className="date__desc">DAYS</span>
+       </li>
+       <li>
+         <h2 className="count">05</h2>
+         <span className="date__desc">HOURS</span>
+       </li>
+       <li>
+         <h2 className="count">34</h2>
+         <span className="date__desc">MINUTES</span>
+       </li>
+       <li>
+         <h2 className="count">30</h2>
+         <span className="date__desc">SECONDS</span>
+       </li>
+     </ul>
+        </div>
       </div>
     );
   }
