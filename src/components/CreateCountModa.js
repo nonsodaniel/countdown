@@ -3,6 +3,8 @@ import Modal from "react-modal";
 import { categorList } from "../utils/database";
 import "./modal.scss";
 
+const nextMonth = new Date().setDate(new Date().getDate() + 30);
+console.log(nextMonth);
 const customStyles = {
   content: {
     top: "50%",
@@ -24,7 +26,9 @@ if (typeof window !== "undefined") {
 const CreateCountModal = ({ isOpen, onClose }) => {
   const [name, setName] = useState("");
   const [category, setCategory] = useState("");
-  const [deadline, setDeadline] = useState("");
+  const [deadline, setDeadline] = useState(
+    new Date(nextMonth).toISOString().slice(0, 10)
+  );
   const createCount = (e) => {
     e.preventDefault();
     localStorage.setItem(
@@ -56,7 +60,7 @@ const CreateCountModal = ({ isOpen, onClose }) => {
       >
         <div className="header">
           <span onClick={onClose} className="text-right pointer">
-            <i className="far fa-times-circle close-modal"></i>
+            <i className="far fa-times-circle close-modal pointer"></i>
           </span>
           <h2 className="text-center">Create a Custom Countdown</h2>
         </div>
@@ -84,7 +88,7 @@ const CreateCountModal = ({ isOpen, onClose }) => {
                   onChange={({ target }) => setCategory(target.value)}
                   required={true}
                 >
-                  <option value="">Category</option>
+                  <option value="">Select Category</option>
                   {categorList.map((catgry) => {
                     let { id, value } = catgry;
                     return (
@@ -105,6 +109,7 @@ const CreateCountModal = ({ isOpen, onClose }) => {
                 type="date"
                 name="date"
                 id="date"
+                value={deadline}
                 onChange={({ target }) => setDeadline(target.value)}
               />
             </div>

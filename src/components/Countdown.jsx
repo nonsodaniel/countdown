@@ -92,24 +92,24 @@ class Countdown extends React.Component {
       <div className="image">
         <img src={img} alt="user's__Image"/>
       </div>
-     <h1 className="name mb-2 text-center">CTO's Birthday</h1>
+     <h1 className="name mb-2 text-center text-pry">CTO's Birthday</h1>
      <p className="date mb-2 text-center">The date for CTO's Birthday is and the time remaining is  </p>
      <span className="palm__down">👇</span>
      <ul className="list-wrap mb-2 text-center">
        <li>
-         <h2 className="count">{this.addLeadingZeros(countDown.days)}</h2>
+         <h2 className="count text-pry">{this.addLeadingZeros(countDown.days)}</h2>
          <span className="date__desc">{countDown.days === 1 ? 'Day' : 'Days'}</span>
        </li>
        <li>
-         <h2 className="count">{this.addLeadingZeros(countDown.hours)}</h2>
+         <h2 className="count text-pry">{this.addLeadingZeros(countDown.hours)}</h2>
          <span className="date__desc">HOURS</span>
        </li>
        <li>
-         <h2 className="count">{this.addLeadingZeros(countDown.min)}</h2>
+         <h2 className="count text-pry">{this.addLeadingZeros(countDown.min)}</h2>
          <span className="date__desc">MINUTES</span>
        </li>
        <li>
-         <h2 className="count">
+         <h2 className="count text-pry">
            {this.addLeadingZeros(countDown.sec).slice(0, 3)}
            </h2>
          <span className="date__desc">SECONDS</span>
