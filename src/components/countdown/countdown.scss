@@ -6,7 +6,7 @@
   background-size: cover;
   display: flex;
   overflow: hidden;
-  .countdown-wrap {
+  .countdown-details {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -53,6 +53,10 @@
     font-size: 20px;
     font-weight: 400;
   }
+  .event__date{
+    color: #f9641d;
+    font-size: 20px;
+  }
   .date {
     font-size: 18px;
     color: #6f6f6f;
@@ -79,7 +83,7 @@
 
 @media (max-width: 1200px) {
   .countdown-container {
-    .countdown-wrap {
+    .countdown-details {
       width: 90%;
     }
   }
@@ -89,7 +93,7 @@
   .countdown-container {
     height: auto;
     justify-content: center;
-    .countdown-wrap {
+    .countdown-details {
       margin: 2rem 0;
     }
     .list-wrap {

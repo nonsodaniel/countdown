@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Modal from "react-modal";
 import { categorList, customStyles } from "../../utils/dataList";
 import "./modal.scss";
@@ -41,16 +41,9 @@ const CreateCountModal = ({ isOpen, onClose, getData }) => {
     return getData({ name, category, deadline });
   };
 
-  function  onFocus () {
+  const  onFocus = () => {
     setDateType('datetime-local')
   }
-  function onBlur  () {
-    setDateType('text')
-  }
-
-  useEffect(() => {
-    console.log(formData());
-  }, []);
 
   return (
     <div className="count-modal">
