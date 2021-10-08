@@ -134,7 +134,7 @@ const Countdown = ({date}) => {
        </ul>
        <p className="mb-2 bottom__text text-center">Click <em className="here" onClick={() => openModal()}>Here</em> to create your custom Countdown</p>
         </div>
-        <CreateCountModal isOpen={isOpen} onClose={closeModal} getData = {getData}/>
+        <CreateCountModal isOpen={isOpen} onClose={closeModal} getData = {getData} deadline={deadline}/>
         </div>
       )
 };

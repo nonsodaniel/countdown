@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Modal from "react-modal";
 import { categorList, customStyles } from "../../utils/dataList";
 import "./modal.scss";
@@ -15,6 +15,7 @@ const CreateCountModal = ({ isOpen, onClose, getData }) => {
   const [deadline, setDeadline] = useState(
     new Date(nextMonth).toISOString().slice(0, 10)
   );
+  const [dateType, setDateType] = useState("text");
   const createCount = (e) => {
     e.preventDefault();
     localStorage.setItem(
@@ -39,6 +40,17 @@ const CreateCountModal = ({ isOpen, onClose, getData }) => {
   const formData = () => {
     return getData({ name, category, deadline });
   };
+
+  function  onFocus () {
+    setDateType('datetime-local')
+  }
+  function onBlur  () {
+    setDateType('text')
+  }
+
+  useEffect(() => {
+    console.log(formData());
+  }, []);
 
   return (
     <div className="count-modal">
@@ -96,11 +108,15 @@ const CreateCountModal = ({ isOpen, onClose, getData }) => {
               </label>
               <input
                 className="form-control"
-                type="datetime-local"
+                type={dateType}
                 name="date"
                 id="date"
-                value={deadline}
-                onChange={({ target }) => setDeadline(target.value)}
+                required={true}
+                placeholder="Select deadline"
+                onFocus={onFocus}
+                onChange={({ target }) => {
+                  setDeadline(target.value)
+                } }
               />
             </div>
             <div className="btn-wrap mt-1">
