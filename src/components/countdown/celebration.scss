@@ -1,0 +1,91 @@
+.confetti {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.text{ 
+  font-size: 4rem;
+  font-weight: 700;
+  animation: rainbow 2s infinite;
+
+}
+
+@keyframes rainbow {
+  0% {
+    color: white;
+  }
+  10% {
+    color: red;
+  }
+  20% {
+    color: orange;
+  }
+  30% {
+    color: yellow;
+  }
+  40% {
+    color: pink;
+  }
+  50% {
+    color: lime;
+  }
+  60% {
+    color: green;
+  }
+  70% {
+    color: aqua;
+  }
+  80% {
+    color: blue;
+  }
+  90% {
+    color: indigo;
+  }
+  100% {
+    color: violet;
+  }
+
+}
+
+
+.scroll-text {
+text-align: right;
+width: 100%;
+/* animation properties */
+-moz-transform: translateX(-100%);
+-webkit-transform: translateX(-100%);
+transform: translateX(-100%);
+
+-moz-animation: my-animation 12s linear infinite;
+-webkit-animation: my-animation 12s linear infinite;
+animation: my-animation 12s linear infinite;
+}
+
+/* for Firefox */
+@-moz-keyframes my-animation {
+from { -moz-transform: translateX(-100%); }
+to { -moz-transform: translateX(100%); }
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animation {
+from { -webkit-transform: translateX(-100%); }
+to { -webkit-transform: translateX(100%); }
+}
+
+@keyframes my-animation {
+from {
+-moz-transform: translateX(-100%);
+-webkit-transform: translateX(-100%);
+transform: translateX(-100%);
+}
+to {
+-moz-transform: translateX(100%);
+-webkit-transform: translateX(100%);
+transform: translateX(100%);
+}
+}

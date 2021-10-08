@@ -2,21 +2,46 @@
 # Live link
 [Preview](https://github.com/facebook/create-react-app).
 # Countdown
-
 ## Improved countdown
 The below component was designed to count down the days until our CTO's birthday, but it still needs some work. How can you make the implementation better?
+- The countdown by default has a static date of 2020-12-24T00:00:00 which is not a good experience. 
+- The best possible experience is to make it  dynamic an enable the user create their Custom countdown which I have implemented.
+- The User Interface also doesn't look interactive and eye-catching, because of this, I created a very interactive and eye-catching User Interface while making it accessible  and easy for everyone to understand.
 
 **Do a critique:** The current implementation isn't perfect. How could it be improved?
 
 * Pick an area of improvement to implement.
-* What would happen to the current code if the date were changed, the page layout was changed or the format was changed?
-* Does the current implementation follow best practices for HTML, CSS, JS and React?
+- Fixing the countdown output bug to achieve the correct result.
+- Introducing React Hooks to handle lifecycles, for short, simple and easy-to-understand code. 
+- Implementing a beautiful, dynamic and good User interface and experience.
+
+* What would happen to the current code if the date were changed, the page layout was changed or the format was changed? 
+- If the date format were changed, the countdown will not function correctly as it requires a string that can be parsed by Javascript Date object.
+-  If the date is not passed to the countdown component, the countdown shows '00' for all values which isn't correct.
+If the layout was changed to a responsive and interactive layout, this will provide a good experience for the User and also make the Celebrant happier.
+
+* Does the current implementation follow best practices for HTML, CSS, JS and React? Most of the implementation follows best practice except the comma sign after the <Countdown /> component. Irrelevant files, assets and code blocks should also be removed as well as unused comments. 
+
 
 **Spice it up:** Let's be honest, this countdown could be a whole lot more exciting.
-
 * What could you do to create a greater sense of urgency?
-* How would you make this countdown more aesthetically pleasing?
+1. Change the layout which includes the Font properties(weight, size), colors for different status depending on the current state of the countdown and add moderate animations to improve the User experience which has all been done by me.
+2.  In the future I could also send a reminder to the Celebrant's mail and even add it to their online calendar because it's an important event.
+
+
+* How would you make this countdown more aesthetically pleasing? 
+1. Get the correct Birth date
+2. Replace counts to 'Happy Birthday [celebrant Name]' once it gets to the Birth date
+3. Make the Fonts descriptive and use appropiate colors to correctly describe the current countdown state
+4. Animation is very important but should not be misused.
+
+
 * Trust your design instincts, and explain how your design choices impact the user experience
+1. Using the user name would make them feel appreciated.
+2. The fonts and colors if used appropiately would catch the attention of the celebrant and other users which would make them spend more time appreciating the application.
+3. Usage of good animation would give the user a sense of interactivity and put a smile on their face as it signifies celebration which is a Wonderful experience.
+4. Usage of Semantic HTML and taking accessibilit into consideration will help those who are in need of it as they can use screen reader to get the point of the Application's information.
+5. Responsive design also go a long way to make the application accessible and provide good experience on different devices and their sizes.
 
 ## Getting Started with Create React App
 

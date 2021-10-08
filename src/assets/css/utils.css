@@ -5,6 +5,19 @@
 .text-pry{
   color: #7888fc;
 }
+.text-timeout, .text-danger{
+  color: red;
+  font-weight: bold;
+}
+.text-timeout{
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
 .pointer{
   cursor: pointer;
 }
