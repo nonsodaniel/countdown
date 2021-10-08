@@ -4,7 +4,9 @@
 # Countdown
 ## Improved countdown
 The below component was designed to count down the days until our CTO's birthday, but it still needs some work. How can you make the implementation better?
-The countdown by default has a static date of 2020-12-24T00:00:00 which is not a good experience. The best possible experience is to make it  dynamic an enable the user create their Custom countdown which I have implemented. The User Interface also doesn't look interactive and eye-catching, because of this, I created a very interactive and eye-catching User Interface while making it accessible  and easy for everyone to understand.
+- The countdown by default has a static date of 2020-12-24T00:00:00 which is not a good experience.
+- The best possible experience is to make it  dynamic an enable the user create their Custom countdown which I have implemented.
+- The User Interface also doesn't look interactive and eye-catching, because of this, I created a very interactive and eye-catching User Interface while making it accessible  and easy for everyone to understand.
 
 **Do a critique:** The current implementation isn't perfect. How could it be improved?
 

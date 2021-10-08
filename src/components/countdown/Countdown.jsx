@@ -13,12 +13,12 @@ const intialCountdownState = {
   sec: 0,
 }
 
-const Countdown = ({date}) => {
+const Countdown = () => {
   const [countDown, setCountDown] = useState(intialCountdownState);
   const [isOpen, setIsOpen] = useState(false)
   const [name, setName] = useState("CTO");
   const [category, setCategory] = useState("BIRTHDAY");
-  const [deadline, setDeadline] = useState(date);
+  const [deadline, setDeadline] = useState('2020-12-24T00:00:00');
   
   const calculateCountdown = (endDate) => {
     let diff = (Date.parse(new Date(endDate)) - Date.parse(new Date())) / 1000;
