@@ -51,7 +51,7 @@
   }
   .date__desc {
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 600;
   }
   .event__date{
     color: #f9641d;
@@ -75,9 +75,12 @@
     font-weight: 400;
   }
   .here {
-    color: #f3c304;
+    color: #7888fc;
     text-decoration: underline;
     cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+
   }
 }
 

@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './countdown.scss'
+import './celebration.scss'
 import img from '../../assets/img/avatar.png'
 import CreateCountModal from './CreateCountModa';
 import CountdownWrap from './CountdownDetails';
+import Confetti from './Confetti';
 
 const intialCountdownState = {
   days: 0,
@@ -99,13 +101,41 @@ const Countdown = ({date}) => {
     return () => clearInterval(interval);
   }, [deadline]);
   
+  const timeOut = () =>{
+    if(addLeadingZeros(countDown.days) === '00' 
+    && addLeadingZeros(countDown.hours) === '00'
+     && addLeadingZeros(countDown.min) ==='00'
+     && addLeadingZeros(countDown.sec) < Number(60)
+     && addLeadingZeros(countDown.sec) !== '00'
+     ){
+      return  true 
+    } 
+ return false
+  }
+  const timeElapse = () =>{
+    if(addLeadingZeros(countDown.days) === '00' 
+    && addLeadingZeros(countDown.hours) === '00'
+     && addLeadingZeros(countDown.min) ==='00'
+     && addLeadingZeros(countDown.sec) === '00'
+     ){
+      return  true 
+    } 
+ return false
+  }
+
       return (
+        <>
+        {
+          timeElapse() &&  <Confetti category={category} />
+        }
         <div className="countdown-container">
-          <CountdownWrap name={name} category={category} img={img}  deadline={deadline}
-          addLeadingZeros={addLeadingZeros}  countDown={countDown} openModal={openModal}/>
+          <CountdownWrap name={name} category={category} img={img}  deadline={deadline} timeOut={timeOut} timeElapse={timeElapse}
+  addLeadingZeros={addLeadingZeros}  countDown={countDown} openModal={openModal}/>
              <CreateCountModal isOpen={isOpen} onClose={closeModal} getData = {getData} deadline={deadline}/>
         </div>
+        </>
       )
+  
 };
 
 

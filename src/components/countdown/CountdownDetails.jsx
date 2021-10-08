@@ -1,5 +1,6 @@
 import React from 'react'
-const CountdownWrap = ({name, category,deadline, img, addLeadingZeros, countDown,openModal }) => {
+const CountdownWrap = ({name, category,deadline, img,timeOut,timeElapse, addLeadingZeros, countDown,openModal }) => {
+  const timeDisplay =` ${timeOut() ? 'text-timeout': ''} ${timeElapse() ? 'text-danger': '' }`
     return (
         <div className="countdown-details">
         <div className="image">
@@ -12,21 +13,21 @@ const CountdownWrap = ({name, category,deadline, img, addLeadingZeros, countDown
        <ul className="list-wrap mb-2 text-center">
          <li>
            <h2 className="count text-pry">{addLeadingZeros(countDown.days)}</h2>
-           <span className="date__desc">{countDown.days <= 1 ? 'Day' : 'Days'}</span>
+           <span className={`date__desc ${timeDisplay}`}>{countDown.days <= 1 ? 'Day' : 'Days'}</span>
          </li>
          <li>
            <h2 className="count text-pry">{addLeadingZeros(countDown.hours)}</h2>
-           <span className="date__desc">HOURS</span>
+           <span className={`date__desc ${timeDisplay}`}>HOURS</span>
          </li>
          <li>
            <h2 className="count text-pry">{addLeadingZeros(countDown.min)}</h2>
-           <span className="date__desc">MINUTES</span>
+           <span className={`date__desc ${timeDisplay}`}>MINUTES</span>
          </li>
          <li>
            <h2 className="count text-pry">
              {addLeadingZeros(countDown.sec).slice(0, 3)}
              </h2>
-           <span className="date__desc">SECONDS</span>
+           <span className={`date__desc ${timeDisplay}`}>SECONDS</span>
          </li>
        </ul>
        <p className="mb-2 bottom__text text-center">Click <em className="here" onClick={() => openModal()}>Here</em> to create your custom Countdown</p>
