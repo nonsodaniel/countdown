@@ -1,29 +1,15 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
-import { categorList } from "../utils/database";
+import { categorList, customStyles } from "../utils/database";
 import "./modal.scss";
 
 const nextMonth = new Date().setDate(new Date().getDate() + 30);
-console.log(nextMonth);
-const customStyles = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-    boxShadow: `rgba(0, 0, 0, 0.25) 0px 12px 15px 0px`,
-    background: "white",
-    border: "none",
-  },
-};
 
 if (typeof window !== "undefined") {
   Modal.setAppElement("body");
 }
 
-const CreateCountModal = ({ isOpen, onClose }) => {
+const CreateCountModal = ({ isOpen, onClose, getData }) => {
   const [name, setName] = useState("");
   const [category, setCategory] = useState("");
   const [deadline, setDeadline] = useState(
@@ -35,6 +21,7 @@ const CreateCountModal = ({ isOpen, onClose }) => {
       "countdown",
       JSON.stringify({ name, category, deadline })
     );
+    formData();
     resetForm();
     handleClose();
   };
@@ -49,7 +36,10 @@ const CreateCountModal = ({ isOpen, onClose }) => {
     onClose();
   };
 
-  console.log("deadline");
+  const formData = () => {
+    return getData({ name, category, deadline });
+  };
+
   return (
     <div className="count-modal">
       <Modal
@@ -106,7 +96,7 @@ const CreateCountModal = ({ isOpen, onClose }) => {
               </label>
               <input
                 className="form-control"
-                type="date"
+                type="datetime-local"
                 name="date"
                 id="date"
                 value={deadline}

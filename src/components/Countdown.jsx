@@ -10,23 +10,15 @@ const intialCountdownState = {
   sec: 0,
 }
 
+
+
 const Countdown = ({date}) => {
   const [countDown, setCountDown] = useState(intialCountdownState);
   const [isOpen, setIsOpen] = useState(false)
+  const [name, setName] = useState("CTO");
+  const [category, setCategory] = useState("BIRTHDAY");
+  const [deadline, setDeadline] = useState(date);
   
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const countdownDate = calculateCountdown(date);
-      setCountDown(countdownDate);
-      if (countdownDate.sec < 0) {
-        setCountDown(intialCountdownState);
-        clearInterval(interval);
-      }
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, [date]);
-
   const calculateCountdown = (endDate) => {
     let diff = (Date.parse(new Date(endDate)) - Date.parse(new Date())) / 1000;
 
@@ -82,11 +74,24 @@ const Countdown = ({date}) => {
     setIsOpen(false);
   };
 
+  const getData = (data)=>{
+    let {name, category, deadline} = data
+    setName(name);
+    setCategory(category)
+    setDeadline(new Date(deadline))
+  }
 
   useEffect(() => {
- 
+   let data = JSON.parse(localStorage.getItem("countdown"))
+   if(data){
+     getData(data)
+   } 
+   else{console.log(false)}
+
+  }, [])
+  useEffect(() => {
     const interval = setInterval(() => {
-      const countdownDate = calculateCountdown(date);
+      const countdownDate = calculateCountdown(deadline);
       setCountDown(countdownDate);
       if (countdownDate.sec < 0) {
         setCountDown(intialCountdownState);
@@ -95,7 +100,8 @@ const Countdown = ({date}) => {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [date]);
+  }, [deadline]);
+  
 
   
       return (
@@ -104,7 +110,7 @@ const Countdown = ({date}) => {
         <div className="image">
           <img src={img} alt="user's__Image"/>
         </div>
-       <h1 className="name mb-2 text-center text-pry">CTO's Birthday</h1>
+       <h1 className="name mb-2 text-center text-pry">{name}'s {category}</h1>
        <p className="date mb-2 text-center">The date for CTO's Birthday is and the time remaining is  </p>
        <span className="palm__down">👇</span>
        <ul className="list-wrap mb-2 text-center">
@@ -127,9 +133,9 @@ const Countdown = ({date}) => {
            <span className="date__desc">SECONDS</span>
          </li>
        </ul>
-       <p className="mb-2 bottom__text text-center">Click <em className="here"      onClick={() => openModal()}>Here</em> to create your custom Countdown</p>
+       <p className="mb-2 bottom__text text-center">Click <em className="here" onClick={() => openModal()}>Here</em> to create your custom Countdown</p>
         </div>
-        <CreateCountModal isOpen={isOpen} onClose={closeModal}/>
+        <CreateCountModal isOpen={isOpen} onClose={closeModal} getData = {getData}/>
         </div>
       )
 };
