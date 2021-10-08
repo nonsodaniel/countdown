@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './countdown.scss'
-import img from '../assets/img/avatar.png'
+import img from '../../assets/img/avatar.png'
 import CreateCountModal from './CreateCountModa';
 
 const intialCountdownState = {
@@ -9,8 +9,6 @@ const intialCountdownState = {
   min: 0,
   sec: 0,
 }
-
-
 
 const Countdown = ({date}) => {
   const [countDown, setCountDown] = useState(intialCountdownState);
@@ -106,6 +104,7 @@ const Countdown = ({date}) => {
   
       return (
         <div className="countdown-container">
+          
           <div className="countdown-wrap">
         <div className="image">
           <img src={img} alt="user's__Image"/>

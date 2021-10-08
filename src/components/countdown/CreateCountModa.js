@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
-import { categorList, customStyles } from "../utils/database";
+import { categorList, customStyles } from "../../utils/dataList";
 import "./modal.scss";
 
 const nextMonth = new Date().setDate(new Date().getDate() + 30);
