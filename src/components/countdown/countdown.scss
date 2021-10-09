@@ -43,7 +43,7 @@
   }
 
   .name {
-    font-size: 50px;
+    font-size: 45px;
     font-weight: 900;
   }
   .count {
@@ -88,7 +88,7 @@
 @media (max-width: 1200px) {
   .countdown-container {
     .countdown-details {
-      width: 90%;
+      width: 95%;
     }
   }
 }
@@ -103,5 +103,11 @@
     .list-wrap {
       flex-direction: column;
     }
+    .name{
+      font-size: 40px;
+    }
+  }
+  .text{
+    font-size: 35px;
   }
 }
