@@ -47,7 +47,7 @@ const CountdownWrap = ({name, category,deadline, img,timeOut,timeElapse, addLead
  
         )
       }
-       <p className="mb-2 bottom__text text-center">Click <em className="here" onClick={() => openModal()}>Here</em> to create your custom Countdown</p>
+       <p className="mb-2 bottom__text text-center">Click <span className="here" onClick={() => openModal()}>Here</span> to create your custom Countdown</p>
         </div>
      
     )
