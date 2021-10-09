@@ -2,6 +2,11 @@
 # Live link
 [Preview](https://github.com/facebook/create-react-app).
 # Countdown
+## Implementation
+I have created a more befitting User interface with better Interactivity and dynamic data flow. 
+- My implementation allows a user to create a dynamic Custom Countdown based on their occassion, this comes with a very easy User flow, Aesthetic Interface and accurate logic which can be used by anyone at anytime.
+- My implementation also lets the user know the current state of their countdown, thereby, providing a better experience for them.
+
 ## Improved countdown
 The below component was designed to count down the days until our CTO's birthday, but it still needs some work. How can you make the implementation better?
 - The countdown by default has a static date of 2020-12-24T00:00:00 which is not a good experience. 
