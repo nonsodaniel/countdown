@@ -1,6 +1,6 @@
 
 # Live link
-[Preview](https://github.com/facebook/create-react-app).
+[Preview](https://lfl-countdown.vercel.app/).
 # Countdown
 ## Improved countdown
 The below component was designed to count down the days until our CTO's birthday, but it still needs some work. How can you make the implementation better?
