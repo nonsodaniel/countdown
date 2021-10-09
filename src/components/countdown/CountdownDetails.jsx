@@ -8,7 +8,7 @@ const CountdownWrap = ({name, category,deadline, img,timeOut,timeElapse, addLead
         </div>
        <h1 className="name mb-2 text-center text-pry">{name}'s {category}</h1>
        <p className="date mb-2 text-center">The date for {name}'s {category} is  <span className="event__date">
-          {new Date(deadline).toGMTString()} </span> 
+          {new Date(deadline).toDateString()} </span> 
        {
          !timeElapse() && (   `and the time remaining is:`  )
        }
