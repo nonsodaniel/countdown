@@ -1,6 +1,6 @@
 
 # Live link
-[Preview](https://github.com/facebook/create-react-app).
+[Preview](https://lfl-countdown.vercel.app/).
 # Countdown
 ## Implementation
 I have created a more befitting User interface with better Interactivity and dynamic data flow. 

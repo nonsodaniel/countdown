@@ -5,7 +5,7 @@ import Countdown from "./components/countdown/Countdown.jsx";
 function App() {
   return (
     <div className="App">
-      <Countdown date={new Date().setDate(new Date().getDate() + 30)} />,
+      <Countdown />,
     </div>
   );
 }
